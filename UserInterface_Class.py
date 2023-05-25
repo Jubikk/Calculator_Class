@@ -14,12 +14,15 @@ class UserInterface:
         self.root = root
         self.root.withdraw()
         self.root.protocol("WM_DELETE_WINDOW", self.close_window)
+
     #def Set Calculator
     def set_calculator(self, calculator):
         self.calculator = calculator
+
     #def message
     def display_message(self, message):
         messagebox.showinfo("Message.", message)
+
     #def menu
     def display_menu(self):
         self.display_message("Calculator Menu\n"
@@ -28,6 +31,7 @@ class UserInterface:
                              "3. Multiply\n"
                              "4. Divide\n"
                              "5. Exit")
+        
     #def get menu(choices)
     def get_menu_choice(self):
         choice = self.display_input_dialog("Enter your operation(1-5):")
@@ -35,14 +39,23 @@ class UserInterface:
             return int(choice)
         else:
             raise UserError("Invalid. Please try again.")    
+        
     #def get integer and operation
     def get_integer_input(self, prompt):
         return int(self.display_input_dialog(prompt))
-
+    
     def get_operator_input(self, prompt):
         return self.display_input_dialog(prompt)
+    
     #def input dialog
+    def display_input_dialog(self, prompt):
+        result = simpledialog.askstring("Input", prompt, parent=self.root)
+        if result is None: 
+            self.confirm_exit()
+        return result
+    
     #def the calculations
+    
     #def display result
     #def exit and close window
 
