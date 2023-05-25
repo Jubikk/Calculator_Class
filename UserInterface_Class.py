@@ -9,10 +9,9 @@ import time
 #Create a UserInterface Class
 class UserInterface:
     #def init
-    def __init__(self, root):
-        self.calculator = None
+    def __init__(self, root, calculator):
+        self.calculator = calculator
         self.root = root
-        self.root.withdraw()
         self.root.protocol("WM_DELETE_WINDOW", self.close_window)
 
     #def Set Calculator
@@ -49,8 +48,11 @@ class UserInterface:
     
     #def input dialog
     def display_input_dialog(self, prompt):
-        result = simpledialog.askstring("Input", prompt, parent=self.root)
-        if result is None: 
+        dialog_window = tk.Toplevel(self.root)
+        dialog_window.withdraw()
+        result = simpledialog.askstring("Input", prompt, parent=dialog_window)
+        dialog_window.destroy()
+        if result is None:
             self.confirm_exit()
         return result
     
@@ -108,10 +110,6 @@ class UserInterface:
 class UserError(Exception):
     pass
 
-root = tk.Tk()
-ui = UserInterface(root)
-calculator = MyCalculator()
-ui.set_calculator(calculator)
-ui.perform_calculation()
 
-root.mainloop()
+
+#End
