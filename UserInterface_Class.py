@@ -18,6 +18,8 @@ class UserInterface:
     def set_calculator(self, calculator):
         self.calculator = calculator
     #def message
+    def display_message(self, message):
+        messagebox.showinfo("Message.", message)
     #def menu
     #def get menu(choices)
     #def get integer and operation
