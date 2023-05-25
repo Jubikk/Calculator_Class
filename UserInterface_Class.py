@@ -55,10 +55,56 @@ class UserInterface:
         return result
     
     #def the calculations
-    
+    def perform_calculation(self):
+        self.display_message("Welcome to the Calculator.")
+        self.display_menu()
+
+        while True:
+            try:
+                choice = self.get_menu_choice()
+
+                if choice == 1:
+                    int1 = self.get_integer_input("Enter your first number:")
+                    int2 = self.get_integer_input("Enter your second number:")
+                    result = self.calculator.add(int1, int2)
+                    self.display_result(result)
+                elif choice == 2:
+                    int1 = self.get_integer_input("Enter your first number:")
+                    int2 = self.get_integer_input("Enter your second number:")
+                    result = self.calculator.subtract(int1, int2)
+                    self.display_result(result)
+                elif choice == 3:
+                    int1 = self.get_integer_input("Enter your first number:")
+                    int2 = self.get_integer_input("Enter your second number:")
+                    result = self.calculator.multiply(int1, int2)
+                    self.display_result(result)
+                elif choice == 4:
+                    int1 = self.get_integer_input("Enter your first number:")
+                    int2 = self.get_integer_input("Enter your second number:")
+                    result = self.calculator.divide(int1, int2)
+                    self.display_result(result)
+                elif choice == 5:
+                    self.display_message("Thank you for using the program!")
+                    break
+
+                time.sleep(0.5)
+
+            except UserError as error:
+                self.display_message(str(error))
+
     #def display result
+    def display_result(self, result):
+        self.display_message("The result is: " + str(result))
+
     #def exit and close window
+    def confirm_exit(self):
+        if messagebox.askyesno("Confirmation", "Are you sure you want to exit?"):
+            self.root.destroy()
+
+    def close_window(self):
+        self.confirm_exit()
 
 #class for UserError
 class UserError(Exception):
     pass
+
