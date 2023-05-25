@@ -8,5 +8,10 @@
     #def Set Calculator
     #def message
     #def menu
+    #def get menu(choices)
     #def get integer and operation
-    
+    #def input dialog
+    #def the calculations
+    #def display result
+    #def exit and close window
+#class for UserError
