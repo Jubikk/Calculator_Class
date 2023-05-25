@@ -1,8 +1,9 @@
 #Joebeck Andrew F. Gusi | BSCPE 1-5 | Assignment No.7 |
 
-#Pseudocode
-
 #Import the the classes from the other files
+from Calculator_Class import MyCalculator
+from UserInterface_Class import UserInterface
+
 #def the performing calculation
 
 
