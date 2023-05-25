@@ -8,13 +8,15 @@ import time
 
 #Create a UserInterface Class
 class UserInterface:
+    #def init
     def __init__(self, root):
         self.calculator = None
         self.root = root
         self.root.withdraw()
         self.root.protocol("WM_DELETE_WINDOW", self.close_window)
-    #def init
     #def Set Calculator
+    def set_calculator(self, calculator):
+        self.calculator = calculator
     #def message
     #def menu
     #def get menu(choices)
