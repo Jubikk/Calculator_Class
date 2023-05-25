@@ -21,10 +21,26 @@ class UserInterface:
     def display_message(self, message):
         messagebox.showinfo("Message.", message)
     #def menu
+    def display_menu(self):
+        self.display_message("Calculator Menu\n"
+                             "1. Add\n"
+                             "2. Subtract\n"
+                             "3. Multiply\n"
+                             "4. Divide\n"
+                             "5. Exit")
     #def get menu(choices)
+    def get_menu_choice(self):
+        choice = self.display_input_dialog("Enter your operation(1-5):")
+        if choice in ['1', '2', '3', '4', '5']:
+            return int(choice)
+        else:
+            raise UserError("Invalid. Please try again.")    
     #def get integer and operation
     #def input dialog
     #def the calculations
     #def display result
     #def exit and close window
+
 #class for UserError
+class UserError(Exception):
+    pass
