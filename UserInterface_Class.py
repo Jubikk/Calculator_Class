@@ -108,3 +108,10 @@ class UserInterface:
 class UserError(Exception):
     pass
 
+root = tk.Tk()
+ui = UserInterface(root)
+calculator = MyCalculator()
+ui.set_calculator(calculator)
+ui.perform_calculation()
+
+root.mainloop()
