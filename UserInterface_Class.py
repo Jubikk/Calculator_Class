@@ -36,6 +36,11 @@ class UserInterface:
         else:
             raise UserError("Invalid. Please try again.")    
     #def get integer and operation
+    def get_integer_input(self, prompt):
+        return int(self.display_input_dialog(prompt))
+
+    def get_operator_input(self, prompt):
+        return self.display_input_dialog(prompt)
     #def input dialog
     #def the calculations
     #def display result
