@@ -2,12 +2,13 @@
 
 #Import the the classes from the other files
 import tkinter as tk
-from Calculator_Class import MyCalculator
+from Calculator_Class import MyCalculator , NewCalculator
+
 from UserInterface_Class import UserInterface
 
 #def the performing calculation
 def PERFORM_CALCULATION():
-    calculator = MyCalculator()
+    calculator = NewCalculator()
     root = tk.Tk()
     ui = UserInterface(root, calculator)
     ui.perform_calculation()

@@ -3,7 +3,7 @@
 #Import tkinter, from tkinter import messagebox and simpledialog, and import time
 import tkinter as tk
 from tkinter import messagebox, simpledialog
-from Calculator_Class import MyCalculator
+from Calculator_Class import NewCalculator
 import time
 
 #Create a UserInterface Class
@@ -29,12 +29,13 @@ class UserInterface:
                              "2. Subtract\n"
                              "3. Multiply\n"
                              "4. Divide\n"
+                             "5. Power\n"
                              "5. Exit")
         
     #def get menu(choices)
     def get_menu_choice(self):
         choice = self.display_input_dialog("Enter your operation(1-5):")
-        if choice in ['1', '2', '3', '4', '5']:
+        if choice in ['1', '2', '3', '4', '5', '6']:
             return int(choice)
         else:
             raise UserError("Invalid. Please try again.")    
@@ -61,6 +62,7 @@ class UserInterface:
         self.display_message("Welcome to the Calculator.")
         self.display_menu()
 
+        calculator = NewCalculator()
         while True:
             try:
                 choice = self.get_menu_choice()
@@ -86,6 +88,11 @@ class UserInterface:
                     result = self.calculator.divide(int1, int2)
                     self.display_result(result)
                 elif choice == 5:
+                    int1 = self.get_integer_input("Enter the base number:")
+                    int2 = self.get_integer_input("Enter the exponent:")
+                    result = self.calculator.power(int1, int2)
+                    self.display_result(result)
+                elif choice == 6:
                     self.display_message("Thank you for using the program!")
                     break
 
