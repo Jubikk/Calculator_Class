@@ -12,5 +12,8 @@ class MyCalculator:
             return integer1 / integer2
         else:
             return "Cannot Divide by zero!"
-
+        
+class NewCalculator(MyCalculator):
+    def power(self, base, exponent):
+        return base ** exponent
 #End
