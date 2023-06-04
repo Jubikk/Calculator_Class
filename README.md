@@ -14,4 +14,9 @@ Features:
 When dividing by zero occurs, the application shows an error notice.
 - User-friendly interface: The program provides a simple and straightforward graphical user interface (GUI) for users to interact with.
 
+
+UPDATE!!(June 4, 2023)
+- A new function is added which is the power function, it will override existing methods
+
+
 Thank you and enjoy using my program.
